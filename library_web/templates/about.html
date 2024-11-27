@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Library System</title>
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+</head>
+<body>
+    <div class="about-container">
+        <header class="about-header">
+            <h1>About Our Library Management System</h1>
+            <p>Your one-stop solution for managing library resources and users.</p>
+        </header>
+
+        <section class="about-section">
+            <h2>Our Mission</h2>
+            <p>Our mission is to provide an easy-to-use platform for library users to search, borrow, and manage books efficiently. We aim to streamline the process for both library staff and patrons, making library management more organized and accessible.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Key Features</h2>
+            <ul>
+                <li><strong>Search and Borrow Books:</strong> Easily search for books by title, author, or ISBN, and borrow them with just a click.</li>
+                <li><strong>User Profiles:</strong> Create and manage personal profiles to keep track of borrowed books and due dates.</li>
+                <li><strong>Book Returns and Renewals:</strong> Return books on time or renew them for an extended period, all from the user dashboard.</li>
+                <li><strong>Contact Support:</strong> Reach out to the library staff for any questions or assistance via the contact form.</li>
+                <li><strong>Admin Dashboard:</strong> Library administrators can manage book inventory, track loans, and handle user accounts with ease.</li>
+            </ul>
+        </section>
+
+        <section class="about-section">
+            <h2>Who We Are</h2>
+            <p>We are a team of passionate developers and library enthusiasts committed to modernizing library management. Our team consists of skilled software developers, UI/UX designers, and system administrators who work together to ensure that the Library Management System is intuitive, efficient, and easy to use.</p>
+            <p>We believe that libraries are essential to communities, and our goal is to make the management of library resources seamless and effective for both users and library staff.</p>
+        </section>
+
+        <section class="about-section">
+            <h2>Our History</h2>
+            <p>The Library Management System was created to address the challenges faced by libraries in managing vast amounts of data, books, and users. Over the years, we have continuously improved the system, adding new features based on user feedback to make it more robust and user-friendly. Our system is now used in libraries of all sizes, helping thousands of users manage their reading experiences.</p>
+        </section>
+
+        <footer class="about-footer">
+            <p>For more information, feel free to <a href="{% url 'contact'%}">contact us</a>.</p>
+        </footer>
+    </div>
+</body>
+</html>

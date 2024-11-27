@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help - Library System</title>
+    <link rel="stylesheet" href="{% static 'help.css' %}">
+</head>
+<body>
+    <div class="help-container">
+        <header class="help-header">
+            <h1>Help & Support</h1>
+            <p>Welcome to the Library Management System! Here, you can find helpful information on how to use the system.</p>
+        </header>
+
+        <section class="help-section">
+            <h2>How to Search for Books</h2>
+            <p>To search for a book in our library, simply use the search bar at the top of the home page. You can search by book title, author, or ISBN number.</p>
+            <img src="{% static 'search-feature.png' %}" alt="Search Feature" class="help-image">
+        </section>
+
+        <section class="help-section">
+            <h2>How to Borrow Books</h2>
+            <p>Once you’ve found the book you’re looking for, click on it for more details. If it’s available, you can borrow it by clicking the "Borrow" button. Remember, you need to be logged in to borrow books.</p>
+            <img src="{% static 'borrow-feature.png' %}" alt="Borrow Feature" class="help-image">
+        </section>
+
+        <section class="help-section">
+            <h2>How to Return Books</h2>
+            <p>When you are done reading a book, you can return it via your user dashboard. Go to "My Books" and click "Return" next to the book you'd like to return.</p>
+            <img src="{% static 'return-feature.png' %}" alt="Return Feature" class="help-image">
+        </section>
+
+        <section class="help-section">
+            <h2>How to Contact Admin</h2>
+            <p>If you have any questions or issues, you can contact the admin through the "Contact Us" page. You can send a message directly to the admin using the contact form provided.</p>
+            <img src="{% static 'contact-feature.png' %}" alt="Contact Admin" class="help-image">
+        </section>
+
+        <section class="help-section">
+            <h2>How to Update Your Profile</h2>
+            <p>To update your profile, go to your user dashboard and click on "Profile Settings." Here, you can update your username, email, and password.</p>
+            <img src="{% static 'profile-update.png' %}" alt="Profile Update" class="help-image">
+        </section>
+
+        <footer class="help-footer">
+            <p>If you need further assistance, please contact support at <a href="{% url 'contact'%}">support@library.com</a></p>
+        </footer>
+    </div>
+</body>
+</html>

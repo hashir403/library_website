@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Library System</title>
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+</head>
+
+<body>
+    <div class="form-container">
+        <div class="form-header">
+            <h2>Signup</h2>
+        </div>
+        <form action="{% url 'signup' %}" method="POST">
+            {% csrf_token %}
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+            {% if error_message %}
+            <p style="color: red;">{{ error_message }}</p>
+            {% endif %}
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit">Sign Up</button>
+        </form>
+        <p class="login-prompt">Already have an account? <a href="{% url 'login' %}">Login here</a></p>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body and background styling */
+body {
+    background-color: #f4f4f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Form Container */
+.form-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border-top: 5px solid #2c3e50;
+}
+
+/* Form Header */
+.form-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-header h2 {
+    color: #2c3e50;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/* Styling for email field */
+input[type="email"] {
+    padding: 12px 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Focus effect for input */
+input[type="email"]:focus {
+    border-color: #2c3e50;
+    box-shadow: 0 0 8px rgba(44, 62, 80, 0.3);
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="password"] {
+    padding: 12px 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #2c3e50;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    padding: 12px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button[type="submit"]:hover {
+    background-color: #34495e;
+    transform: scale(1.02);
+}
+
+/* Login Prompt */
+.login-prompt {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.login-prompt a {
+    color: #2c3e50;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.login-prompt a:hover {
+    color: #34495e;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .form-container {
+        padding: 30px 15px;
+    }
+    
+    .form-header h2 {
+        font-size: 24px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+        padding: 10px 8px;
+    }
+    
+    button[type="submit"] {
+        padding: 10px;
+        font-size: 14px;
+    }
+}

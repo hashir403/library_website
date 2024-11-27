@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library Home</title>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="menu-button" title="Open Menu">&#9776;</div>
+            <div class="logo">
+                <img src="{% static 'logo.png' %}" alt="Library Logo" />
+            </div>
+            <div class="title">
+                <h1>Library Management System</h1>
+            </div>
+
+            <form action="{% url 'search' %}" method="POST">
+                {% csrf_token %}
+                <div class="search-container">
+                    <input type="text" name="searchbar" placeholder="Search...">
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+            
+
+        </div>
+        <nav>
+            <div class="sidebar">
+                <a href="javascript:void(0)" class="closebtn">&times;</a>
+                <a href="{% url 'home' %}">Home</a>
+                <a href="{% url 'contact' %}">Contact</a>
+                <a href="{% url 'help' %}">Help</a>
+                <a href="{% url 'about' %}">About</a>
+                <!-- <a href="login" class="logout">Login</a> -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Available Books</h2>
+        <div class="book-list">
+            {% for i in data %}
+            <div class="book-item">
+                <a href="{% url 'book_details' i.id %}">
+                    <img src="/media/{{i.picture}}" alt="Book picture">
+                    <!-- <p>Book 1 - A brief description</p> -->
+                    <p>{{i.bookName}}</p>
+                </a>
+            </div>
+            {%  endfor  %}
+            
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hashir WebDev. All Rights Reserved.</p>
+    </footer>
+    <script>
+        // JavaScript to handle sidebar
+        document.addEventListener("DOMContentLoaded", function () {
+            const sidebar = document.querySelector('.sidebar');
+            const menuButton = document.querySelector('.menu-button');
+            const closeBtn = document.querySelector('.closebtn');
+
+            // Open sidebar when the menu button is clicked
+            menuButton.addEventListener('click', function () {
+                sidebar.style.width = '250px';
+            });
+
+            // Close sidebar
+            closeBtn.addEventListener('click', function () {
+                sidebar.style.width = '0';
+            });
+
+            // Show sidebar when hovering over the left edge of the header
+            document.querySelector('header').addEventListener('mousemove', function (e) {
+                if (e.clientX < 20) {
+                    sidebar.style.width = '250px';
+                }
+            });
+
+            // Hide sidebar when cursor leaves the sidebar
+            sidebar.addEventListener('mouseleave', function () {
+                sidebar.style.width = '0';
+            });
+        });
+
+    </script>
+</body>
+
+</html>

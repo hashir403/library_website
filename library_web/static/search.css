@@ -1,0 +1,360 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+/* General header styles */
+
+/* Header */
+/* Header */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; /* Changed from fixed to relative */
+    width: 100%;
+    z-index: 1000;
+    flex-wrap: wrap;
+    /* Allow header to wrap on smaller screens */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Optional shadow for better visibility */
+}
+
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    text-align: center;
+    flex: 1;
+    /* Allow the header title to take up available space */
+}
+
+header .logo {
+    margin-right: 20px;
+}
+
+header .logo img {
+    width: 50px;
+    height: auto;
+}
+
+header nav {
+    display: flex;
+    gap: 20px;
+}
+
+/* Navigation Links Style */
+header nav a {
+    color: white;
+    /* Text color */
+    background-color: #34495e;
+    /* Button background color */
+    padding: 10px 15px;
+    /* Add padding for button-like appearance */
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+    /* Rounded corners */
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transition effect */
+}
+
+/* Hover Effect for Navigation Links */
+header nav a:hover {
+    background-color: #18bc9c;
+    /* Lighter shade for hover effect */
+    color: #fff;
+    /* Ensure text is still visible */
+}
+
+
+
+.sidebar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    background-color: #2c3e50;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    box-shadow: 3px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 1.2em;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: #18bc9c;
+}
+
+.sidebar .closebtn {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 2em;
+    cursor: pointer;
+}
+
+/* Centered Search Title */
+.centered-search-title {
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    background-color: rgba(44, 62, 80, 0.8); /* Slightly transparent background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1.8em;
+    z-index: 1010; /* Ensure it appears above the content */
+    text-align: center;
+    margin: 0;
+}
+
+
+
+main {
+    padding: 140px 20px 20px; /* Adjusted padding for space under the fixed header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #34495e;
+    text-align: center;
+}
+
+.book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.book-item {
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    flex: 1 1 250px;
+    max-width: 250px;
+    min-width: 200px;
+}
+
+.book-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.book-item a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.book-item img {
+    width: 225px;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.book-item p {
+    font-size: 1.1em;
+    color: #2c3e50;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2c3e50;
+    color: white;
+    margin-top: 30px;
+    font-size: 1em;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2.2em;
+    }
+
+    nav a {
+        font-size: 1em;
+        margin: 0 10px;
+    }
+
+    .book-item {
+        max-width: 220px;
+    }
+
+    .book-item img {
+        width: 140px;
+        height: 180px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 2em;
+        margin-top: 10px;
+    }
+
+    .book-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+
+    .book-item {
+        max-width: 200px;
+        min-width: 180px;
+    }
+
+    .book-item img {
+        width: 130px;
+        height: 170px;
+    }
+
+    .book-item p {
+        font-size: 1em;
+    }
+
+    .search-container {
+        margin-top: 10px;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .book-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .book-item {
+        max-width: 180px;
+        min-width: 150px;
+        margin: 10px 0;
+    }
+
+    .book-item img {
+        width: 120px;
+        height: 160px;
+    }
+
+    .book-item p {
+        font-size: 0.9em;
+    }
+
+    nav {
+        margin-top: 15px;
+    }
+
+    nav a {
+        margin: 5px 10px;
+        font-size: 0.9em;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    header nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        /* Allow nav links to wrap if necessary */
+    }
+
+    header nav a {
+        margin: 10px 0;
+        /* Add margin for nav items */
+        font-size: 16px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header .logo img {
+        width: 40px;
+        /* Smaller logo on small screens */
+    }
+
+    header h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav a {
+        font-size: 14px;
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 470px) {
+    main {
+        padding-top: 240px;
+        /* Increased padding to account for the header height */
+    }
+}
