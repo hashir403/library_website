@@ -1,13 +1,19 @@
 {
-    "builds": [{
-        "src": "project/wsgi.py",
-        "use": "@vercel/python",
-        "config": { "maxLambdaSize": "15mb", "runtime": "python3.12.6" }
-    }],
+    "builds": [
+        {
+            "src": "project/wsgi.py",
+            "use": "@vercel/python",
+            "config": { "maxLambdaSize": "15mb", "runtime": "python3.12.6" }
+        }
+    ],
     "routes": [
         {
+            "src": "/static/(.*)",
+            "dest": "/project/static/$1"  // Ensure static files are served from the correct path
+        },
+        {
             "src": "/(.*)",
-            "dest": "project/wsgi.py"
+            "dest": "/project/wsgi.py"
         }
     ]
 }
