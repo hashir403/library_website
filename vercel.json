@@ -9,7 +9,7 @@
     "routes": [
         {
             "src": "/static/(.*)",
-            "dest": "/project/static/$1"  // Ensure static files are served from the correct path
+            "dest": "/project/static/$1"  
         },
         {
             "src": "/(.*)",
