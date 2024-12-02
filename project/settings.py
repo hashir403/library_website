@@ -23,7 +23,7 @@ import os
 import sys
 from pathlib import Path
 from django.core.management import execute_from_command_line
-if _name_ == "_main_":
+if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "AhmadImpex_project.settings")
 
     # For serverless environments, Vercel needs an "app" or "handler" function
